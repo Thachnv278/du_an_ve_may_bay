@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\AircraftController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\clients\HomeController;
 use App\Http\Controllers\PassengerController;
 use App\Http\Controllers\SeatController;
 use App\Http\Controllers\SeatTypeController;
@@ -22,7 +23,7 @@ use App\Http\Controllers\TicketController;
 */
 
 // chuyến bay
-Route::get('/', [FlightController::class, 'index'])->name('flights.index'); 
+Route::get('list', [FlightController::class, 'index'])->name('flights.index'); 
 Route::match(['get','post'], '/add', [FlightController::class, 'add'])->name('flights.add');
 Route::match(['get','post'], '/edit/{id}', [FlightController::class, 'edit'])->name('flights.edit');
 Route::get('/delete/{id}', [FlightController::class, 'delete'])->name('flights.delete');
@@ -55,6 +56,11 @@ Route::get('/passengerdelete/{id}', [PassengerController::class, 'delete'])->nam
 Route::get('/ticketlist/{id}', [TicketController::class, 'index'])->name('tickets.index'); 
 // đặt vé
 Route::get('/bookinglist', [BookingController::class, 'index'])->name('bookings.index'); 
+
+
+
+//
+Route::get('/', [HomeController::class, 'index'])->name('home.index'); 
 
 
 
