@@ -26,6 +26,7 @@
                             <th>Tên Máy Bay</th>
                             <th>Điểm Khởi Hành</th>
                             <th>Điểm Đến</th>
+                            <th>Ngày Bay</th>
                             <th>Thời Gian Cất Cánh</th>
                             <th>Thời Gian Hạ Cánh</th>
                             <th>Trạng Thái</th>
@@ -41,8 +42,10 @@
                                     <strong>{{ $item->id }}</strong>
                                 </td>
                                 <td>{{ $item->aircraft->aircraft_name }}</td>
+                              
                                 <td>{{ $item->route->origin }}</td>
                                 <td>{{ $item->route->destination }}</td>
+                                <td>{{ $item->DepartureDate }}</td>
                                 
                                 <td><span class="badge bg-label-primary me-1">{{ $item->DepartureTime }}</span></td>
                                 <td><span class="badge bg-label-warning me-1">{{ $item->ArrivalTime }}</span></td>

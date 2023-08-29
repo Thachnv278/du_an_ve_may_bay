@@ -19,8 +19,9 @@ class FlightFactory extends Factory
         return [
            'aircraft_id'=> fake()->numberBetween(1, 10),
            'route_id'=> fake()->numberBetween(1, 10),
-           'DepartureTime' => fake()->datetime(),
-           'ArrivalTime' => fake()->datetime(),
+           'DepartureDate' => fake()->date(),
+           'DepartureTime' => fake()->time(),
+           'ArrivalTime' => fake()->time(),
            'status'=> fake()->word(),
            'price_1'=> fake()->numberBetween(1, 10),
            'price_2'=> fake()->numberBetween(1, 10),

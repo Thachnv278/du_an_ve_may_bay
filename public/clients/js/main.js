@@ -271,3 +271,77 @@
 
 })(jQuery);
 
+const selectElement = document.getElementById('mySelect');
+        const searchInput = document.getElementById('searchInput');
+        const selectDropdown = document.getElementById('selectDropdown');
+        // Hiển thị dropdown khi ô tìm kiếm được click vào
+        searchInput.addEventListener('click', function(event) {
+          event.stopPropagation();
+          selectDropdown.style.display = 'block';
+        });
+    
+        // Xử lý tìm kiếm và hiển thị tùy chọn phù hợp
+        searchInput.addEventListener('input', function() {
+          const searchTerm = searchInput.value.toLowerCase();
+          selectDropdown.innerHTML = '';
+    
+          for (let i = 0; i < selectElement.options.length; i++) {
+            const optionText = selectElement.options[i].text.toLowerCase();
+            if (optionText.includes(searchTerm)) {
+              const optionValue = selectElement.options[i].value;
+              const optionDisplayText = selectElement.options[i].text;
+              const optionItem = document.createElement('div');
+              optionItem.textContent = optionDisplayText;
+              optionItem.addEventListener('click', function() {
+                selectElement.value = optionValue;
+                searchInput.value = optionDisplayText;
+                selectDropdown.style.display = 'none';
+              });
+              selectDropdown.appendChild(optionItem);
+            }
+          }
+        });
+    
+        // Đóng dropdown khi click ra ngoài
+        document.addEventListener('click', function() {
+          selectDropdown.style.display = 'none';
+        });
+
+
+		  const selectElementCountry = document.getElementById('countrySelect');
+        const searchInputCountry = document.getElementById('searchInputCountry');
+        const selectDropdownCountry = document.getElementById('selectDropdownCountry');
+    
+        // Hiển thị dropdown khi ô tìm kiếm được click vào
+        searchInputCountry.addEventListener('click', function(event) {
+          event.stopPropagation();
+          selectDropdownCountry.style.display = 'block';
+        });
+    
+        // Xử lý tìm kiếm và hiển thị tùy chọn phù hợp
+        searchInputCountry.addEventListener('input', function() {
+          const searchTerm = searchInputCountry.value.toLowerCase();
+          selectDropdownCountry.innerHTML = '';
+    
+          for (let i = 0; i < selectElementCountry.options.length; i++) {
+            const optionText = selectElementCountry.options[i].text.toLowerCase();
+            if (optionText.includes(searchTerm)) {
+              const optionValue = selectElementCountry.options[i].value;
+              const optionDisplayText = selectElementCountry.options[i].text;
+              const optionItem = document.createElement('div');
+              optionItem.textContent = optionDisplayText;
+              optionItem.addEventListener('click', function() {
+                selectElementCountry.value = optionValue;
+                searchInputCountry.value = optionDisplayText;
+                selectDropdownCountry.style.display = 'none';
+              });
+              selectDropdownCountry.appendChild(optionItem);
+            }
+          }
+        });
+    
+        // Đóng dropdown khi click ra ngoài
+        document.addEventListener('click', function() {
+          selectDropdownCountry.style.display = 'none';
+        });
+

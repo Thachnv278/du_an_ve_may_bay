@@ -54,17 +54,23 @@
                         <input type="text" class="form-control" name="price_2">
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Ngày Bay</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" name="DepartureDate">
+                    </div>
+                </div>
 
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label">Thời Gian Cất Cánh</label>
                     <div class="col-sm-10">
-                        <input type="datetime-local" class="form-control" name="DepartureTime">
+                        <input type="time" class="form-control" name="DepartureTime">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label">Thời Gian Hạ Cánh</label>
                     <div class="col-sm-10">
-                        <input type="datetime-local" class="form-control" name="ArrivalTime">
+                        <input type="time" class="form-control" name="ArrivalTime">
                     </div>
                 </div>
 

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Flight extends Model
 {
     use HasFactory;
-    protected $fillable = ['route_id','aircraft_id','DepartureTime','ArrivalTime','status','price_1','price_2'];
+    protected $fillable = ['route_id','aircraft_id','DepartureDate','DepartureTime','ArrivalTime','status','price_1','price_2'];
     protected $table = 'flights';
 
    

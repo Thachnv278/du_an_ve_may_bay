@@ -49,16 +49,22 @@
           <input type="text" class="form-control" name="price_2" value="{{ $flight->price_2 }}">
       </div>
   </div>
+  <div class="row mb-3">
+    <label class="col-sm-2 col-form-label">Ngày Bay</label>
+    <div class="col-sm-10">
+        <input type="date" class="form-control" name="DepartureDate" value="{{ $flight->DepartureDate}}">
+    </div>
+</div>
        <div class="row mb-3">
          <label class="col-sm-2 col-form-label">Thời Gian Cất Cánh</label>
          <div class="col-sm-10">
-           <input type="datetime-local" class="form-control" name="DepartureTime" value="{{ $flight->DepartureTime}}">
+           <input type="time" class="form-control" name="DepartureTime" value="{{ $flight->DepartureTime}}">
          </div>
        </div>
        <div class="row mb-3">
          <label class="col-sm-2 col-form-label">Thời Gian Hạ Cánh</label>
          <div class="col-sm-10">
-           <input type="datetime-local" class="form-control" name="ArrivalTime" value="{{ $flight->ArrivalTime}}">
+           <input type="time" class="form-control" name="ArrivalTime" value="{{ $flight->ArrivalTime}}">
          </div>
        </div>
       

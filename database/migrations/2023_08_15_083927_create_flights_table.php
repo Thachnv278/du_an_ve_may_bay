@@ -16,8 +16,9 @@ return new class extends Migration
             
             $table->unsignedInteger('aircraft_id');
             $table->unsignedInteger('route_id');
-            $table->datetime('DepartureTime');
-            $table->datetime('ArrivalTime');
+            $table->date('DepartureDate');
+            $table->time('DepartureTime');
+            $table->time('ArrivalTime');
             $table->string('status')->default('Chưa bay');
             $table->integer('price_1');
             $table->integer('price_2');
