@@ -61,7 +61,10 @@ Route::get('/bookinglist', [BookingController::class, 'index'])->name('bookings.
 
 //
 Route::get('/', [HomeController::class, 'index'])->name('home.index'); 
-Route::get('flight', [HomeController::class, 'searchFlights'])->name('home.flight'); 
+Route::post('flight', [HomeController::class, 'searchFlights'])->name('home.flight'); 
+Route::get('flight_detail_1/{id}', [HomeController::class, 'Details_1'])->name('home.detail_1');
+Route::get('flight_detail_2/{id}', [HomeController::class, 'Details_2'])->name('home.detail_2');
+  
 
 
 

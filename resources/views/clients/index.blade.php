@@ -7,7 +7,7 @@
 
     </div>
 
-    <section class="ftco-section ftco-no-pb ftco-no-pt">
+    <section class="ftco-section ftco-no-pb ftco-no-pt mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -22,10 +22,10 @@
                             </div>
                             <div class="col-md-12 tab-wrap">
                                 <div class="tab-content" id="v-pills-tabContent">
-
                                     <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel"
                                         aria-labelledby="v-pills-nextgen-tab">
-                                        <form action="{{ route('home.flight') }}" class="search-property-1">
+                                        <form action="{{ route('home.flight') }}" method="POST" class="search-property-1"  id="searchForm">
+                                           @csrf
                                             <div class="row no-gutters">
                                                 <div class="col-md d-flex">
                                                     <div class="form-group p-4 border-0">
@@ -35,17 +35,16 @@
                                                             </div>
                                                             <div id="searchSelect">
                                                                 <!-- Ô tìm kiếm -->
-                                                                <input type="text" id="searchInput" name="origin"  placeholder="Khởi Hành">
+                                                                <input type="text" id="searchInput" name="origin" placeholder="Tìm kiếm">
                                                                 
-                                                                <!-- Phần tử select ẩn -->
-                                                                <select id="mySelect"   style="display: none ;" class="form-control">
+                                                                <select id="mySelect" style="display: none;" class="form-control">
                                                                     @foreach ($flight as $item)
-                                                                    <option value="{{$item->route->origin}} ">{{$item->route->origin}}</option>
+                                                                        <option value="{{$item->route->origin}}">{{$item->route->origin}}</option>
                                                                     @endforeach
-                                                                
                                                                 </select>
+                                                                
                                                                 <div id="selectDropdown"></div>
-                                                              </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -57,7 +56,7 @@
                                                             </div>
                                                             <div id="searchCountry">
                                                                 <!-- Ô tìm kiếm -->
-                                                                <input type="text" id="searchInputCountry" name="destination" placeholder="Nhập để tìm kiếm...">
+                                                                <input type="text" id="searchInputCountry" name="destination" placeholder="Tìm kiếm">
                                                                 
                                                                 <!-- Phần tử select ẩn -->
                                                                 <select id="countrySelect" style="display: none;">
@@ -98,7 +97,7 @@
                                                 <div class="col-md d-flex">
                                                     <div class="form-group d-flex w-100 border-0">
                                                         <div class="form-field w-100 align-items-center d-flex">
-                                                            <input type="submit" value="Tìm Kiếm"
+                                                            <input type="submit" value="Tìm Kiếm" id="searchButton"
                                                                 class="align-self-stretch form-control btn btn-primary">
                                                         </div>
                                                     </div>
@@ -115,10 +114,66 @@
                 </div>
             </div>
     </section>
+    <section class="ftco-section services-section">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-md-6 order-md-last heading-section pl-md-5 ftco-animate d-flex align-items-center">
+                    <div class="w-100">
+                        <span class="subheading">Welcome to Pacific</span>
+                        <h2 class="mb-4">It's time to start your adventure</h2>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                        A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <p><a href="#" class="btn btn-primary py-3 px-4">Search Destination</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+                            <div class="services services-1 color-1 d-block img" style="background-image: url(images/services-1.jpg);">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-paragliding"></span></div>
+                                <div class="media-body">
+                                    <h3 class="heading mb-3">Activities</h3>
+                                    <p>A small river named Duden flows by their place and supplies it with the necessary</p>
+                                </div>
+                            </div>      
+                        </div>
+                        <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+                            <div class="services services-1 color-2 d-block img" style="background-image: url(images/services-2.jpg);">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-route"></span></div>
+                                <div class="media-body">
+                                    <h3 class="heading mb-3">Travel Arrangements</h3>
+                                    <p>A small river named Duden flows by their place and supplies it with the necessary</p>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+                            <div class="services services-1 color-3 d-block img" style="background-image: url(images/services-3.jpg);">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-tour-guide"></span></div>
+                                <div class="media-body">
+                                    <h3 class="heading mb-3">Private Guide</h3>
+                                    <p>A small river named Duden flows by their place and supplies it with the necessary</p>
+                                </div>
+                            </div>      
+                        </div>
+                        <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+                            <div class="services services-1 color-4 d-block img" style="background-image: url(images/services-4.jpg);">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-map"></span></div>
+                                <div class="media-body">
+                                    <h3 class="heading mb-3">Location Manager</h3>
+                                    <p>A small river named Duden flows by their place and supplies it with the necessary</p>
+                                </div>
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
    
 
-    <section class="ftco-section img ftco-select-destination" style="background-image: url('{{asset('clients/images/bg_3.jpg')}}');">
+    <section class="ftco-section img ftco-select-destination mt-5" style="background-image: url('{{asset('clients/images/bg_3.jpg')}}');">
         <div class="container">
             <div class="row justify-content-center pb-4">
                 <div class="col-md-12 heading-section text-center ftco-animate">
@@ -394,19 +449,6 @@
             </div>
         </div>
     </section>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const checkoutDateInput = document.getElementById("checkoutDateInput");
     
-            checkoutDateInput.addEventListener("input", function () {
-                const enteredDate = new Date(checkoutDateInput.value);
-                const currentDate = new Date();
-    
-                if (enteredDate < currentDate) {
-                    checkoutDateInput.value = ""; // Xóa giá trị nếu là ngày quá khứ
-                }
-            });
-        });
-    </script>
     
 @endsection

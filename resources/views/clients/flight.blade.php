@@ -30,6 +30,7 @@
                     </div>
                 </div>
             </div>
+           
             @if (count($flights) > 0)
             @foreach ($flights as $item)
             <div class="container_detail">
@@ -47,21 +48,24 @@
                         <div class="detail_item_time">
                             <h3>{{ \Carbon\Carbon::parse($item->ArrivalTime)->format('H:i') }}</h3>
                             <p>{{$item->destination}}</p>
-                        </div>
-                        {{-- <div class="detail_item_time">
-                            <h3>VN205</h3>
-                        </div> --}}
+                        </div>          
                     </div>
                 </div>
                 <div class="main_detail_1">
-                    <div class="main_detail_right">
-                        <h5>TỪ</h5>
-                        <h4>{{$item->price_1}} <span>VND</span></h4>
-                    </div>
-                    <div class="main_detail_right">
-                        <h5>TỪ</h5>
-                        <h4>{{$item->price_2}}<span>VND</span></h4>
-                    </div>
+                    <a href="{{ route('home.detail_1',['id'=>$item->id]) }}">
+
+                        <div class="main_detail_right">
+                            <h5>TỪ</h5>
+                            <h4>{{ $item->price_1 }} <span>VND</span></h4>
+                        </div>
+                    </a>
+                    <a href="{{ route('home.detail_2',['id'=>$item->id]) }}">
+
+                        <div class="main_detail_right">
+                            <h5>TỪ</h5>
+                            <h4>{{ $item->price_2 }}<span>VND</span></h4>
+                        </div>
+                    </a>
                 </div>
             </div>
                 
@@ -70,6 +74,7 @@
             <p>Không có kết quả tìm kiếm phù hợp.</p>
 
         @endif
+           
            
            
 

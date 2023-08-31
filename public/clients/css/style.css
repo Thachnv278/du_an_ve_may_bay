@@ -10220,3 +10220,129 @@ textarea.form-control {
 .content {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+
+.select-dropdown {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.select-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.select-dropdown ul li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.select-dropdown ul li:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+.form-tt form{
+  display:flex;
+  justify-content: space-between;
+ 
+}
+.form-left{
+  width: 60%;
+}
+
+.form-left h5{
+  background-color: #33597C;
+  padding: 10px;
+  border-radius: 4px;
+}
+.form-top{
+  padding: 10px;
+  border: 1px ;
+  border-radius: 4px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.form-bottom{
+  padding: 10px;
+  border: 1px ;
+  border-radius: 4px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+.item__totalMoney--img img {
+  width: 355px;
+}
+
+.container__main--item__totalMoney {
+ 
+  background-color: #3c6382;
+  border-radius: 5px;
+}
+
+.item__totalMoney--totail {
+  padding: 20px 0 20px 20px;
+}
+
+.item__totalMoney--totail h2 {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.item__totalMoney--totail h3 {
+  color: #ffffff9d;
+}
+
+.item__totalMoney--totail h3 span {
+  padding: 0 10px;
+}
+
+
+.item__totalMoney--changeFlights {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #0c2461;
+  padding: 10px 0 14px 0;
+  cursor: pointer;
+}
+
+.item__totalMoney--plus {
+  background-color: #ffff;
+  padding: 20px 20px 50px 20px;
+  margin-top: 10px;
+}
+
+.item__totalMoney--plus {
+  border-radius: 5px;
+}
+
+.item__totalMoney--plus__text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28px;
+  font-weight: bolder;
+  color: #0c2461;
+}
+
+.item__totalMoney--plus p {
+  text-align: right;
+  color: #0c2461;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.btn_total{
+  
+  float: right;
+}

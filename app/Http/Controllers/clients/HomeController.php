@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Flight;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -30,4 +31,38 @@ class HomeController extends Controller
 
         return view('clients.flight',compact('flights'));
     }
+    public function Details_1(Request $request ,$id){
+        $item=Flight::find($id);
+        $cart = session()->get('cart');
+        $cart = [
+            'id' => $item->id,
+            'aircraft_id' => $item->aircraft_id,
+            'route_id' => $item->route_id,
+            'DepartureDate' => $item->DepartureDate,
+            'DepartureTime' => $item->DepartureTime,
+            'ArrivalTime' => $item->ArrivalTime,
+            'price_1' => $item->price_1
+
+        ];
+        session()->put('cart', $cart);
+        return view('clients.detail',compact('cart'));
+    }
+    public function Details_2(Request $request ,$id){
+        $item=Flight::find($id);
+        $cart = session()->get('cart');
+        $cart = [
+            'id' => $item->id,
+            'aircraft_id' => $item->aircraft_id,
+            'route_id' => $item->route_id,
+            'DepartureDate' => $item->DepartureDate,
+            'DepartureTime' => $item->DepartureTime,
+            'ArrivalTime' => $item->ArrivalTime,
+            'price_2' => $item->price_2
+
+        ];
+        dd($cart);
+        session()->put('cart', $cart);
+        return view('clients.detail',compact('cart'));
+    }
+    
 }

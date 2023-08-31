@@ -271,6 +271,13 @@
 
 })(jQuery);
 
+
+ 
+ 
+ 
+ 
+ 
+
 const selectElement = document.getElementById('mySelect');
         const searchInput = document.getElementById('searchInput');
         const selectDropdown = document.getElementById('selectDropdown');
@@ -345,3 +352,95 @@ const selectElement = document.getElementById('mySelect');
           selectDropdownCountry.style.display = 'none';
         });
 
+
+
+		  var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; // Tháng tính từ 0 đến 11
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+
+        var todayFormatted = yyyy + '-' + mm + '-' + dd;
+
+        // Đặt thuộc tính min cho ngày hiện tại
+        document.getElementById("checkoutDateInput").setAttribute("min", todayFormatted);
+
+
+
+	// 	  document.addEventListener("DOMContentLoaded", function () {
+	// 		var searchButton = document.getElementById("searchButton");
+	// 		var originInput = document.getElementById("searchInput");
+	// 		var originSelect = document.getElementById("mySelect");
+	// 		var passengerInput = document.querySelector(".form-field input[type='text']");
+	// 		var departureDateInput = document.getElementById("checkoutDateInput");
+ 
+	// 		searchButton.addEventListener("click", function (event) {
+	// 			 var validOrigin = Array.from(originSelect.options).some(function (option) {
+	// 				  return option.value === originInput.value;
+	// 			 });
+ 
+	// 			 if (!validOrigin) {
+	// 				  event.preventDefault();
+	// 				  alert("Vui lòng chọn giá trị phù hợp từ danh sách.");
+	// 			 } else if (!originInput.value || !passengerInput.value || !departureDateInput.value) {
+	// 				  event.preventDefault();
+	// 				  alert("Vui lòng nhập đầy đủ thông tin trước khi tìm kiếm.");
+	// 			 }
+	// 		});
+	//   });
+
+
+	document.addEventListener("DOMContentLoaded", function () {
+		var searchButton = document.getElementById("searchButton");
+		var originInput = document.getElementById("searchInput");
+		var destinationInput = document.getElementById("searchInputCountry");
+		var passengerInput = document.querySelector(".form-field input[type='text']");
+		var departureDateInput = document.getElementById("checkoutDateInput");
+		var originSelect = document.getElementById("mySelect");
+		var destinationSelect = document.getElementById("countrySelect");
+		var originOptions = Array.from(originSelect.options).map(function (option) {
+			 return option.value.trim();
+		});
+		var destinationOptions = Array.from(destinationSelect.options).map(function (option) {
+			 return option.value.trim();
+		});
+
+		searchButton.addEventListener("click", function (event) {
+			 var userInputOrigin = originInput.value.trim();
+			 var userInputDestination = destinationInput.value.trim();
+
+			 var validOrigin = originOptions.includes(userInputOrigin);
+			 var validDestination = destinationOptions.includes(userInputDestination);
+
+			 if (!userInputOrigin || !userInputDestination || !passengerInput.value || !departureDateInput.value) {
+				  event.preventDefault();
+				
+			 } else if (!validOrigin) {
+				  event.preventDefault();
+				 
+			 } else if (!validDestination) {
+				  event.preventDefault();
+				 
+			 }
+		});
+  });
+
+
+
+
+  $(document).ready(function() {
+	$('.toggle-details').click(function(e) {
+		 e.preventDefault();
+		 var flightId = $(this).data('flight-id');
+		 var type = $(this).data('type');
+
+		 window.location.href = $(this).attr('href'); // Chuyển hướng đến trang chi tiết
+	});
+});
